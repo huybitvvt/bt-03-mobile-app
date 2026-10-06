@@ -6,6 +6,12 @@ Bài tập React Native sử dụng Expo: chuyển giữa hai màn hình, truy�
 
 [Xem video thuyết trình và demo trên Google Drive](https://drive.google.com/file/d/1NGJVFJLQZdmZ20K_q_uvQhT2m_Y84WR7/view?usp=sharing)
 
+## Hình ảnh minh chứng
+
+Code React Native trong `App.js` và Screen 1 chạy trên máy ảo Android:
+
+![Code App.js và Screen 1 trên máy ảo Android](./docs/images/screen1-code-emulator.jpg)
+
 ## Chức năng
 
 - **Screen 1:** sáu ô màu đánh số 1–6, hai ô nhập `UserName`, `MSSV` và nút **Click me** ở dưới giữa màn hình.
