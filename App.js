@@ -68,6 +68,8 @@ function Screen1({
       nextErrors.studentId = 'Vui lòng nhập MSSV.';
     } else if (!/^B[A-Z]{2}[0-9]+$/i.test(student.studentId)) {
       nextErrors.studentId = 'MSSV phải bắt đầu bằng B, tiếp theo là 2 chữ cái A–Z và các chữ số. Ví dụ: BIT240115.';
+    } else if (!/^2[2-6]$/.test(student.studentId.slice(3, 5))) {
+      nextErrors.studentId = 'Hai chữ số đầu của MSSV phải nằm trong khoảng 22–26. Ví dụ: BIT240115.';
     }
 
     setErrors(nextErrors);
@@ -159,7 +161,7 @@ function Screen1({
             <TextInput
               ref={studentIdRef}
               accessibilityLabel="MSSV"
-              accessibilityHint={errors.studentId || 'Bắt đầu bằng B, tiếp theo là 2 chữ cái A–Z và ít nhất 1 chữ số'}
+              accessibilityHint={errors.studentId || 'Bắt đầu bằng B, tiếp theo là 2 chữ cái A–Z, 2 chữ số đầu từ 22 đến 26, phần còn lại chỉ gồm chữ số'}
               style={[styles.input, errors.studentId && styles.inputError]}
               value={studentId}
               onChangeText={(value) => {
@@ -174,7 +176,7 @@ function Screen1({
               onSubmitEditing={handleSubmit}
             />
             <Text style={styles.inputHint}>
-              B + 2 chữ cái A–Z + số, ví dụ BIT240115.
+              B + 2 chữ cái A–Z + 22–26 + các chữ số, ví dụ BIT240115.
             </Text>
             {errors.studentId ? (
               <Text accessibilityLiveRegion="polite" style={styles.errorText}>
